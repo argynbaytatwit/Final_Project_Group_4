@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
-<?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
-	<!-- TODO Add Nodes -->
-</BorderPane>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.shape.Circle?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="application.SampleController" hgap="10" vgap="10">
+    <Text fx:id="scoreText" text="Score: 0" GridPane.rowIndex="0" GridPane.columnSpan="3"/>
+    <Text fx:id="timerText" text="Time: 30" GridPane.rowIndex="1" GridPane.columnSpan="3"/>
+    
+    <!-- 3x3 grid of mole holes -->
+    <Circle fx:id="mole00" radius="30" fill="gray" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <Circle fx:id="mole01" radius="30" fill="gray" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <Circle fx:id="mole02" radius="30" fill="gray" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+    
+    <Circle fx:id="mole10" radius="30" fill="gray" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <Circle fx:id="mole11" radius="30" fill="gray" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Circle fx:id="mole12" radius="30" fill="gray" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+    
+    <Circle fx:id="mole20" radius="30" fill="gray" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <Circle fx:id="mole21" radius="30" fill="gray" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    <Circle fx:id="mole22" radius="30" fill="gray" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+</GridPane>
