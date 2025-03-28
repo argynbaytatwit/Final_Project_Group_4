@@ -36,6 +36,7 @@ public class SampleController {
         addClickHandlers();
     }
 
+    
     private void updateTimer() {
         if (timeLeft > 0) {
             timeLeft--;
@@ -50,7 +51,7 @@ public class SampleController {
         int row = random.nextInt(3);
         int col = random.nextInt(3);
         Circle mole = getMoleByCoordinates(row, col);
-        mole.setFill(javafx.scene.paint.Color.GREEN);
+        mole.setFill(javafx.scene.paint.Color.BROWN);
     }
 
     private Circle getMoleByCoordinates(int row, int col) {
@@ -82,26 +83,28 @@ public class SampleController {
 
     @FXML
     private void whackMole(Circle mole) {
-        if (mole.getFill() == javafx.scene.paint.Color.GREEN) {
+        if (mole.getFill() == javafx.scene.paint.Color.BROWN) {
             score++;
             scoreText.setText("Score: " + score);
             mole.setFill(javafx.scene.paint.Color.GRAY);
         }
     }
+    
     private void addClickHandlers() {
-    	// Add click event listeners for all moles
-    	mole00.setOnMouseClicked(e -> whackMole(mole00));
-    	mole01.setOnMouseClicked(e -> whackMole(mole01));
-    	mole02.setOnMouseClicked(e -> whackMole(mole02));
-    	mole10.setOnMouseClicked(e -> whackMole(mole10));
-    	mole11.setOnMouseClicked(e -> whackMole(mole11));
-    	mole12.setOnMouseClicked(e -> whackMole(mole12));
-    	mole20.setOnMouseClicked(e -> whackMole(mole20));
-    	mole21.setOnMouseClicked(e -> whackMole(mole21));
-    	mole22.setOnMouseClicked(e -> whackMole(mole22));
-    	}
+        // Add click event listeners for all moles
+        mole00.setOnMouseClicked(e -> whackMole(mole00));
+        mole01.setOnMouseClicked(e -> whackMole(mole01));
+        mole02.setOnMouseClicked(e -> whackMole(mole02));
+        mole10.setOnMouseClicked(e -> whackMole(mole10));
+        mole11.setOnMouseClicked(e -> whackMole(mole11));
+        mole12.setOnMouseClicked(e -> whackMole(mole12));
+        mole20.setOnMouseClicked(e -> whackMole(mole20));
+        mole21.setOnMouseClicked(e -> whackMole(mole21));
+        mole22.setOnMouseClicked(e -> whackMole(mole22));
+    }
 
     private void endGame() {
         // Display a message and reset the game
+    timerText.setText("Time's up!");
     }
 }
