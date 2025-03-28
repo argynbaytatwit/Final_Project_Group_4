@@ -3,7 +3,7 @@ package application;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -11,7 +11,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
-            BorderPane root = loader.load();
+            GridPane root = loader.load();
             Scene scene = new Scene(root, 400, 400);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Whack-a-Mole");
