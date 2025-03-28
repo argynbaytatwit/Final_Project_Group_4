@@ -3,17 +3,17 @@ package application;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 import javafx.scene.shape.Circle;
+import javafx.scene.control.Button;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
-
-
 import java.util.Random;
 
 public class SampleController {
     @FXML private Text scoreText;
     @FXML private Text timerText;
     @FXML private Circle mole00, mole01, mole02, mole10, mole11, mole12, mole20, mole21, mole22;
+    @FXML private Button startButton; // Button to start the game
 
     private int score = 0;
     private int timeLeft = 30; // Game time
@@ -23,6 +23,17 @@ public class SampleController {
     @FXML
     private void initialize() {
         // Initialize score and timer
+        scoreText.setText("Score: " + score);
+        timerText.setText("Time: " + timeLeft);
+        startButton.setVisible(true); // Ensure the start button is visible initially
+    }
+
+    @FXML
+    private void startGame() {
+        // Hide the start button and reset game variables
+        startButton.setVisible(false);
+        score = 0;
+        timeLeft = 30;
         scoreText.setText("Score: " + score);
         timerText.setText("Time: " + timeLeft);
 
@@ -35,10 +46,8 @@ public class SampleController {
         moleMovement = new Timeline(new KeyFrame(Duration.seconds(1), e -> moveMole()));
         moleMovement.setCycleCount(Timeline.INDEFINITE);
         moleMovement.play();
-        
     }
 
-    
     private void updateTimer() {
         if (timeLeft > 0) {
             timeLeft--;
@@ -63,7 +72,6 @@ public class SampleController {
         }
     }
 
-    // Reset all moles to gray
     private void resetMoles() {
         mole00.setFill(javafx.scene.paint.Color.GRAY);
         mole01.setFill(javafx.scene.paint.Color.GRAY);
@@ -86,7 +94,6 @@ public class SampleController {
         if (row == 2 && col == 0) return mole20;
         if (row == 2 && col == 1) return mole21;
         if (row == 2 && col == 2) return mole22;
-        
         System.out.println("Invalid mole coordinates: " + row + ", " + col); // Debugging message
         return mole00; // Default to mole00 to prevent crashes
     }
@@ -103,8 +110,9 @@ public class SampleController {
 
     private void endGame() {
         timerText.setText("Time's up!");
-        gameTimer.stop();  // Stop the game timer
-        moleMovement.stop();  // Stop moles from appearing
+        gameTimer.stop(); // Stop the game timer
+        moleMovement.stop(); // Stop moles from appearing
         resetMoles(); // Hide all moles
+        startButton.setVisible(true); // Show the start button again to restart the game
     }
 }
