@@ -32,6 +32,8 @@ public class SampleController {
         Timeline moleMovement = new Timeline(new KeyFrame(Duration.seconds(1), e -> moveMole()));
         moleMovement.setCycleCount(Timeline.INDEFINITE);
         moleMovement.play();
+        
+        addClickHandlers();
     }
 
     private void updateTimer() {
@@ -86,6 +88,18 @@ public class SampleController {
             mole.setFill(javafx.scene.paint.Color.GRAY);
         }
     }
+    private void addClickHandlers() {
+    	// Add click event listeners for all moles
+    	mole00.setOnMouseClicked(e -> whackMole(mole00));
+    	mole01.setOnMouseClicked(e -> whackMole(mole01));
+    	mole02.setOnMouseClicked(e -> whackMole(mole02));
+    	mole10.setOnMouseClicked(e -> whackMole(mole10));
+    	mole11.setOnMouseClicked(e -> whackMole(mole11));
+    	mole12.setOnMouseClicked(e -> whackMole(mole12));
+    	mole20.setOnMouseClicked(e -> whackMole(mole20));
+    	mole21.setOnMouseClicked(e -> whackMole(mole21));
+    	mole22.setOnMouseClicked(e -> whackMole(mole22));
+    	}
 
     private void endGame() {
         // Display a message and reset the game
