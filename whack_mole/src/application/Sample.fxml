@@ -3,8 +3,10 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.shape.Circle?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="application.SampleController" 
-          hgap="10" vgap="10" alignment="CENTER" style="-fx-padding: 20;">
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="application.SampleController"
+          hgap="10" vgap="10"
+          style="-fx-background-image: url('application/images/grass.png'); 
+                 -fx-background-size: cover;">
     <Text fx:id="scoreText" text="Score: 0" GridPane.rowIndex="0" GridPane.columnSpan="3"/>
     <Text fx:id="timerText" text="Time: 30" GridPane.rowIndex="1" GridPane.columnSpan="3"/>
     
