@@ -6,21 +6,32 @@
 <?import javafx.scene.control.Button?>
 
 <StackPane fx:id="gamePane" xmlns:fx="http://javafx.com/fxml" fx:controller="application.SampleController">
-<GridPane hgap="10" vgap="10" alignment="CENTER" style="-fx-padding: 20;">
-<Text fx:id="scoreText" text="Score: 0" GridPane.rowIndex="0" GridPane.columnSpan="3"/>
-<Text fx:id="timerText" text="Time: 30" GridPane.rowIndex="1" GridPane.columnSpan="3"/>
-<Button fx:id="startButton" text="Start Game" onAction="#startGame" GridPane.rowIndex="0" GridPane.columnSpan="3"/>
-<!-- 3x3 grid of mole holes -->
-<Circle fx:id="mole00" radius="30" fill="gray" GridPane.rowIndex="2" GridPane.columnIndex="0" onMouseClicked="#whackMole"/>
-<Circle fx:id="mole01" radius="30" fill="gray" GridPane.rowIndex="2" GridPane.columnIndex="1" onMouseClicked="#whackMole"/>
-<Circle fx:id="mole02" radius="30" fill="gray" GridPane.rowIndex="2" GridPane.columnIndex="2" onMouseClicked="#whackMole"/>
+    <GridPane hgap="10" vgap="10" alignment="CENTER" style="-fx-padding: 20;">
+        
+        <!-- Score Display -->
+        <Text fx:id="scoreText" text="Score: 0" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
+        
+        <!-- Timer Display -->
+        <Text fx:id="timerText" text="Time: 30" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
+        
+        <!-- High Score Display -->
+        <Text fx:id="highScoreText" text="High Score: 0" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
+        
+        <!-- Start Button -->
+        <Button fx:id="startButton" text="Start Game" onAction="#startGame" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
+        
+        <!-- 3x3 Grid of Mole Holes -->
+        <Circle fx:id="mole00" radius="30" fill="gray" GridPane.rowIndex="4" GridPane.columnIndex="0" onMouseClicked="#whackMole"/>
+        <Circle fx:id="mole01" radius="30" fill="gray" GridPane.rowIndex="4" GridPane.columnIndex="1" onMouseClicked="#whackMole"/>
+        <Circle fx:id="mole02" radius="30" fill="gray" GridPane.rowIndex="4" GridPane.columnIndex="2" onMouseClicked="#whackMole"/>
 
-<Circle fx:id="mole10" radius="30" fill="gray" GridPane.rowIndex="3" GridPane.columnIndex="0" onMouseClicked="#whackMole"/>
-<Circle fx:id="mole11" radius="30" fill="gray" GridPane.rowIndex="3" GridPane.columnIndex="1" onMouseClicked="#whackMole"/>
-<Circle fx:id="mole12" radius="30" fill="gray" GridPane.rowIndex="3" GridPane.columnIndex="2" onMouseClicked="#whackMole"/>
+        <Circle fx:id="mole10" radius="30" fill="gray" GridPane.rowIndex="5" GridPane.columnIndex="0" onMouseClicked="#whackMole"/>
+        <Circle fx:id="mole11" radius="30" fill="gray" GridPane.rowIndex="5" GridPane.columnIndex="1" onMouseClicked="#whackMole"/>
+        <Circle fx:id="mole12" radius="30" fill="gray" GridPane.rowIndex="5" GridPane.columnIndex="2" onMouseClicked="#whackMole"/>
 
-<Circle fx:id="mole20" radius="30" fill="gray" GridPane.rowIndex="4" GridPane.columnIndex="0" onMouseClicked="#whackMole"/>
-<Circle fx:id="mole21" radius="30" fill="gray" GridPane.rowIndex="4" GridPane.columnIndex="1" onMouseClicked="#whackMole"/>
-<Circle fx:id="mole22" radius="30" fill="gray" GridPane.rowIndex="4" GridPane.columnIndex="2" onMouseClicked="#whackMole"/>
-</GridPane>
+        <Circle fx:id="mole20" radius="30" fill="gray" GridPane.rowIndex="6" GridPane.columnIndex="0" onMouseClicked="#whackMole"/>
+        <Circle fx:id="mole21" radius="30" fill="gray" GridPane.rowIndex="6" GridPane.columnIndex="1" onMouseClicked="#whackMole"/>
+        <Circle fx:id="mole22" radius="30" fill="gray" GridPane.rowIndex="6" GridPane.columnIndex="2" onMouseClicked="#whackMole"/>
+
+    </GridPane>
 </StackPane>
