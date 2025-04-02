@@ -8,12 +8,15 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
 import java.util.Random;
+import javafx.scene.layout.StackPane;
 
 public class SampleController {
+
     @FXML private Text scoreText;
     @FXML private Text timerText;
     @FXML private Circle mole00, mole01, mole02, mole10, mole11, mole12, mole20, mole21, mole22;
     @FXML private Button startButton; // Button to start the game
+    @FXML private StackPane gamePane;
 
     private int score = 0;
     private int timeLeft = 30; // Game time
@@ -23,6 +26,9 @@ public class SampleController {
     @FXML
     private void initialize() {
         // Initialize score and timer
+        String imagePath = getClass().getResource("/application/resources/Grass.jpg").toExternalForm();
+        gamePane.setStyle("-fx-background-image: url('" + imagePath + "'); -fx-background-size: cover;");
+        
         scoreText.setText("Score: " + score);
         timerText.setText("Time: " + timeLeft);
         startButton.setVisible(true); // Ensure the start button is visible initially
@@ -34,6 +40,7 @@ public class SampleController {
         startButton.setVisible(false);
         score = 0;
         timeLeft = 30;
+        
         scoreText.setText("Score: " + score);
         timerText.setText("Time: " + timeLeft);
 
@@ -68,7 +75,7 @@ public class SampleController {
         // Get a random mole and set its color to brown
         Circle mole = getMoleByCoordinates(row, col);
         if (mole != null) {
-            mole.setFill(javafx.scene.paint.Color.BROWN);
+            mole.setFill(javafx.scene.paint.Color.SADDLEBROWN);
         }
     }
 
@@ -94,6 +101,7 @@ public class SampleController {
         if (row == 2 && col == 0) return mole20;
         if (row == 2 && col == 1) return mole21;
         if (row == 2 && col == 2) return mole22;
+        
         System.out.println("Invalid mole coordinates: " + row + ", " + col); // Debugging message
         return mole00; // Default to mole00 to prevent crashes
     }
@@ -101,7 +109,8 @@ public class SampleController {
     @FXML
     private void whackMole(javafx.scene.input.MouseEvent event) {
         Circle clickedMole = (Circle) event.getSource(); // Get clicked mole dynamically
-        if (clickedMole.getFill().equals(javafx.scene.paint.Color.BROWN)) {
+        
+        if (clickedMole.getFill().equals(javafx.scene.paint.Color.SADDLEBROWN)) {
             score++;
             scoreText.setText("Score: " + score);
             clickedMole.setFill(javafx.scene.paint.Color.GRAY); // Hide mole after click
@@ -109,10 +118,12 @@ public class SampleController {
     }
 
     private void endGame() {
-        timerText.setText("Time's up!");
+        timerText.setText("Time's up! Score: " + score);
+        
         gameTimer.stop(); // Stop the game timer
         moleMovement.stop(); // Stop moles from appearing
         resetMoles(); // Hide all moles
+        
         startButton.setVisible(true); // Show the start button again to restart the game
     }
 }
