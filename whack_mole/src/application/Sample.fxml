@@ -2,36 +2,31 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.control.Button?>
 
 <StackPane fx:id="gamePane" xmlns:fx="http://javafx.com/fxml" fx:controller="application.SampleController">
     <GridPane hgap="10" vgap="10" alignment="CENTER" style="-fx-padding: 20;">
         
-        <!-- Score Display -->
-        <Text fx:id="scoreText" text="Score: 0" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
-        
-        <!-- Timer Display -->
-        <Text fx:id="timerText" text="Time: 30" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
-        
-        <!-- High Score Display -->
-        <Text fx:id="highScoreText" text="High Score: 0" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
-        
+        <Text fx:id="scoreText" text="Score: 0" fill="white" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
+        <Text fx:id="timerText" text="Time: 30" fill="white" style="-fx-font-weight: bold;" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
+        <Text fx:id="highScoreText" text="High Score: 0" fill="white" style="-fx-font-weight: bold;" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
         <!-- Start Button -->
         <Button fx:id="startButton" text="Start Game" onAction="#startGame" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
         
-        <!-- 3x3 Grid of Mole Holes -->
-        <Circle fx:id="mole00" radius="30" fill="gray" GridPane.rowIndex="4" GridPane.columnIndex="0" onMouseClicked="#whackMole"/>
-        <Circle fx:id="mole01" radius="30" fill="gray" GridPane.rowIndex="4" GridPane.columnIndex="1" onMouseClicked="#whackMole"/>
-        <Circle fx:id="mole02" radius="30" fill="gray" GridPane.rowIndex="4" GridPane.columnIndex="2" onMouseClicked="#whackMole"/>
+        <!-- 3x3 Grid of Moles using ImageView -->
+        <ImageView fx:id="mole00" fitWidth="60" fitHeight="60" GridPane.rowIndex="4" GridPane.columnIndex="0" onMouseClicked="#whackMole"/>
+        <ImageView fx:id="mole01" fitWidth="60" fitHeight="60" GridPane.rowIndex="4" GridPane.columnIndex="1" onMouseClicked="#whackMole"/>
+        <ImageView fx:id="mole02" fitWidth="60" fitHeight="60" GridPane.rowIndex="4" GridPane.columnIndex="2" onMouseClicked="#whackMole"/>
 
-        <Circle fx:id="mole10" radius="30" fill="gray" GridPane.rowIndex="5" GridPane.columnIndex="0" onMouseClicked="#whackMole"/>
-        <Circle fx:id="mole11" radius="30" fill="gray" GridPane.rowIndex="5" GridPane.columnIndex="1" onMouseClicked="#whackMole"/>
-        <Circle fx:id="mole12" radius="30" fill="gray" GridPane.rowIndex="5" GridPane.columnIndex="2" onMouseClicked="#whackMole"/>
+        <ImageView fx:id="mole10" fitWidth="60" fitHeight="60" GridPane.rowIndex="5" GridPane.columnIndex="0" onMouseClicked="#whackMole"/>
+        <ImageView fx:id="mole11" fitWidth="60" fitHeight="60" GridPane.rowIndex="5" GridPane.columnIndex="1" onMouseClicked="#whackMole"/>
+        <ImageView fx:id="mole12" fitWidth="60" fitHeight="60" GridPane.rowIndex="5" GridPane.columnIndex="2" onMouseClicked="#whackMole"/>
 
-        <Circle fx:id="mole20" radius="30" fill="gray" GridPane.rowIndex="6" GridPane.columnIndex="0" onMouseClicked="#whackMole"/>
-        <Circle fx:id="mole21" radius="30" fill="gray" GridPane.rowIndex="6" GridPane.columnIndex="1" onMouseClicked="#whackMole"/>
-        <Circle fx:id="mole22" radius="30" fill="gray" GridPane.rowIndex="6" GridPane.columnIndex="2" onMouseClicked="#whackMole"/>
+        <ImageView fx:id="mole20" fitWidth="60" fitHeight="60" GridPane.rowIndex="6" GridPane.columnIndex="0" onMouseClicked="#whackMole"/>
+        <ImageView fx:id="mole21" fitWidth="60" fitHeight="60" GridPane.rowIndex="6" GridPane.columnIndex="1" onMouseClicked="#whackMole"/>
+        <ImageView fx:id="mole22" fitWidth="60" fitHeight="60" GridPane.rowIndex="6" GridPane.columnIndex="2" onMouseClicked="#whackMole"/>
 
     </GridPane>
 </StackPane>
